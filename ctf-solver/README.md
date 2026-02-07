@@ -22,9 +22,16 @@ docker build -t ctf-solver .
 
 ### Running a Sandbox
 
-To create a new sandbox using this template:
+To create a new sandbox using the pre-built image (faster startup):
 
 ```bash
+docker sandbox run -t ghcr.io/tyage/docker-sandbox-templates/ctf-solver:latest gemini
+```
+
+Or build locally (slower first run):
+
+```bash
+docker build -t ctf-solver .
 docker sandbox run --load-local-template -t ctf-solver gemini
 ```
 
